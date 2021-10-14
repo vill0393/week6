@@ -1,0 +1,157 @@
+/* CSS file for week 6 class example */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Start of main page code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+html{
+    font-size:22px;
+    /* set a default font-family for the page 
+    always provide a list of fonts as fall back options - end with a generic font type */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-color:red;
+
+    /* apply a background image */
+    background-image:url("../images/white_brick_wall.png");
+    /* control how the background repeats */
+    background-repeat:no-repeat;
+}
+
+/* use a class to target an element with a . */
+.sizing{
+    /* border is a shorthand that requires three properties: size, colour, and type */
+    border:5px purple solid;
+    /*width:200px;
+    height:200px;
+    using px is a hard-coded value - the element will always be that size */
+    width:50%;
+    height:50%;
+
+    font-size:10px;
+}
+
+.using-rem{
+    /* REM is based in the default font-size for the site (or for the html tag) 
+    Usually this is set to 16px by your browser */
+    font-size:2rem;
+}
+
+.using-em{
+    /* EM is based on the font size of the element's parent - in this case, the parent of this span
+    is the div with the class .sizing */
+    font-size:2em;
+}
+
+.using-viewport{
+    /* vw (viewport width) and vh (viewport height) respond to the size of the browser window */
+    background-color:blue;
+    width:40vw;
+    height:40vh;
+
+    /* positioning a background 
+    background-image:url("../images/bread.jpg");
+    /* control the spot a background image starts 
+    background-position: 40px 20px; /* sets the horizontal then verticla position of the image 
+    background-repeat:no-repeat; */
+
+    /* background shorthand replaces the individual background properties in one line
+    the order is: colour, url, repeat, position-x, position-y */
+    background:blue url("../images/bread.jpg") no-repeat right bottom;
+}
+
+.using-percent{
+    /* percent responds to the element's parent, in this case the element with the class .using-viewport */
+    background-color:azure;
+    width:80%;
+    height:50%;
+
+    /* CSS Typography Options */
+    font-size: 16px; /* you can set the font size using any unit of measurement - usually it's set
+    with px, em, or rem */
+    line-height: 1.3em; /* line height is often set using ems, so it's relative to the size of the font */
+
+    font-weight:bold; /* font weight is how thick the font is */
+    font-style:italic; /* font style add things like italic */
+
+    letter-spacing: 0.1em; /* set the space between the letters (kerning) */
+
+    text-decoration:underline; /* if you want to remove the underline from links, 
+    set text-decoration to none */
+
+    /* if you have a list, use list-style to control the bullets */
+    list-style:none; /* this removes bullets from a list (but is already in the CSS reset) */
+}
+
+/* apply CSS to multiple elements by listing them with a comma */
+.image-contain, .image-cover{
+    border:black 3px solid;
+    width:50vw;
+    height:20vh;
+    background-image:url("../images/bread.jpg");
+    background-repeat:no-repeat;
+    background-position:center center;
+}
+
+/* background-size allows you to scale the background - either with a fixed value or cover or contain */
+
+.image-contain{
+    /* contain scales the background image so it's always inside the element */
+    background-size:contain;
+}
+
+.image-cover{
+    /* cover scales the background image so it's always covering the element */
+    background-size:cover;
+}
